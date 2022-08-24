@@ -1,0 +1,8 @@
+- import_tasks: outliers.yaml
+  tags: 
+    - apps
+    - outliers
+- import_tasks: packages.yaml
+  tags: 
+    - apps
+    - packages

@@ -1,0 +1,44 @@
+- name: Pop Shell cloning
+  become_user: cake
+  git:
+    repo: https://github.com/pop-os/shell.git
+    dest: /opt/pop-shell/
+    clone: yes
+    update: yes
+- name: Pop Shell installation
+  become_user: cake
+  make:
+    chdir: /opt/pop-shell/
+    target: "{{ item }}"
+  with_items: [depcheck, compile, install, configure, enable] # removed restart-shell - might need to log out
+  changed_when: False
+
+- name: LunarVim installation
+  become_user: cake
+  shell: bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) --overwrite --no-install-dependencies 
+  changed_when: False
+
+- name: Setup fish shell  
+  become_user: cake
+  shell: 
+    executable: /usr/bin/fish
+    cmd: |
+      curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+      fisher install PatrickF1/fzf.fish
+  changed_when: False
+
+- name: Add VSCode repository
+  yum_repository:
+    name: vscode
+    description: Visual Studio Code
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add Keybase repository
+  yum_repository:
+    name: keybase
+    description: Keybase.io
+    baseurl: http://prerelease.keybase.io/rpm/x86_64
+    gpgcheck: yes
+    gpgkey: https://keybase.io/docs/server_security/code_signing_key.asc

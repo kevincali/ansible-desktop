@@ -1,0 +1,35 @@
+- name: Install flatpak packages
+  flatpak:
+    name:
+      - bitwarden
+      - spotify
+
+- name: Install fedora packages
+  package:
+    name:
+      - alacritty
+      - ansible
+      - bat
+      - code
+      - dconf-editor
+      - fd-find
+      - fish
+      - fzf
+      - gnome-extensions-app
+      - google-chrome-stable
+      - jetbrains-mono-fonts-all
+      - keybase
+      - neovim
+      - ripgrep
+      - tealdeer
+      - telegram-desktop
+
+- name: Install dependencies
+  package:
+    name:
+      - gcc-c++ # LunarVim
+      - nodejs-typescript # Pop Shell
+      - python3-psutil # Ansible dconf module
+      - util-linux-user # chsh command
+      - xprop # Pop Shell
+
