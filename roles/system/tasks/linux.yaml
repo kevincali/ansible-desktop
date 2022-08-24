@@ -1,0 +1,37 @@
+- name: Configure /opt/
+  file:
+    path: /opt
+    owner: root
+    group: cake
+    mode: 0775
+
+- name: Enable RPM Fusion repositories
+  dnf:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+  with_items:
+    - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+    - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
+
+- name: Remove Fedora filter from Flathub repository
+  shell: flatpak remote-modify --no-filter flathub
+  changed_when: False
+      
+- name: Create local font directory for nerd font
+  become_user: cake
+  file:
+    recurse: yes
+    path: $HOME/.local/share/fonts/JetBrainsMono/
+    state: directory
+- name: Download nerd font
+  become_user: cake
+  unarchive:
+    remote_src: yes
+    src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+    dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/JetBrainsMono"
+    creates: "{{ lookup('env', 'HOME') }}/.local/share/fonts/JetBrainsMono/JetBrains Mono Regular Nerd Font Complete.ttf"
+- name: Update font cache
+  command: fc-cache -f
+  changed_when: False
+

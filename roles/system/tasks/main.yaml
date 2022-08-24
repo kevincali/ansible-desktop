@@ -1,0 +1,8 @@
+- import_tasks: linux.yaml
+  tags: 
+    - system
+    - linux
+- import_tasks: gnome.yaml
+  tags:
+    - system
+    - gnome
