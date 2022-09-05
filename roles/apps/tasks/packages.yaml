@@ -2,7 +2,10 @@
   flatpak:
     name:
       - bitwarden
+      - mailspring
+      - md.obsidian
       - spotify
+      - teamspeak
 
 - name: Install fedora packages
   package:
@@ -16,11 +19,18 @@
       - fish
       - fzf
       - gnome-extensions-app
+      - go
       - google-chrome-stable
       - jetbrains-mono-fonts-all
       - keybase
       - neovim
+      - nodejs-typescript
+      - qalculate
+      - qalculate-qt
       - ripgrep
+      - rofi
+      - syncthing
+      - synergy
       - tealdeer
       - telegram-desktop
 
