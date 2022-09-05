@@ -6,3 +6,7 @@
   tags: 
     - apps
     - packages
+- import_tasks: dual-function-keys.yaml
+  tags: 
+    - apps
+    - dual-function-keys
