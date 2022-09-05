@@ -18,6 +18,19 @@
   shell: bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) --overwrite --no-install-dependencies 
   changed_when: False
 
+- name: Lazygit cloning
+  become_user: cake
+  git:
+    repo: https://github.com/jesseduffield/lazygit.git
+    dest: /opt/lazygit/
+    clone: yes
+    update: yes
+- name: Lazygit installation
+  become_user: cake
+  command: go install
+  args:
+    chdir: /opt/lazygit
+
 - name: Setup fish shell  
   become_user: cake
   shell: 
@@ -26,7 +39,6 @@
       curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
       fisher install PatrickF1/fzf.fish
   changed_when: False
-
 - name: Add VSCode repository
   yum_repository:
     name: vscode
