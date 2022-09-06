@@ -31,6 +31,13 @@
   args:
     chdir: /opt/lazygit
 
+- name: Enable Syncthing
+  become_user: cake
+  systemd:
+    name: syncthing
+    enabled: yes
+    scope: user
+
 - name: Setup fish shell  
   become_user: cake
   shell: 
@@ -39,6 +46,7 @@
       curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
       fisher install PatrickF1/fzf.fish
   changed_when: False
+
 - name: Add VSCode repository
   yum_repository:
     name: vscode
