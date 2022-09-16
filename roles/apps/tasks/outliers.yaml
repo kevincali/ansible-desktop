@@ -47,18 +47,3 @@
       fisher install PatrickF1/fzf.fish
   changed_when: False
 
-- name: Add VSCode repository
-  yum_repository:
-    name: vscode
-    description: Visual Studio Code
-    baseurl: https://packages.microsoft.com/yumrepos/vscode
-    gpgcheck: yes
-    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
-
-- name: Add Keybase repository
-  yum_repository:
-    name: keybase
-    description: Keybase.io
-    baseurl: http://prerelease.keybase.io/rpm/x86_64
-    gpgcheck: yes
-    gpgkey: https://keybase.io/docs/server_security/code_signing_key.asc

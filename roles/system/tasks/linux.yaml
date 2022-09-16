@@ -5,15 +5,6 @@
     group: cake
     mode: 0775
 
-- name: Enable RPM Fusion repositories
-  dnf:
-    name: "{{ item }}"
-    state: present
-    disable_gpg_check: yes
-  with_items:
-    - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
-    - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
-
 - name: Remove Fedora filter from Flathub repository
   shell: flatpak remote-modify --no-filter flathub
   changed_when: False
