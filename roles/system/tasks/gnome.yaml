@@ -5,6 +5,13 @@
     value: "@as []"
   with_items: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+- name: Assign switch-to-application hotkeys
+  become_user: cake
+  dconf:
+    key: "/org/gnome/desktop/wm/keybindings/switch-to-workspace-{{item}}"
+    value: "['<Super>{{item}}']"
+  with_items: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 - name: Configure Gnome
   include_role:
     name: petermosmans.customize-gnome
@@ -75,7 +82,7 @@
     gnome_dconf:
       # super + number
       - key: /org/gnome/shell/extensions/space-bar/shortcuts/enable-activate-workspace-shortcuts
-        value: '"true"'
+        value: '"false"'
       # super + shift + number
       - key: /org/gnome/shell/extensions/space-bar/shortcuts/enable-move-to-workspace-shortcuts
         value: '"true"'
