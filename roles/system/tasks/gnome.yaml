@@ -18,6 +18,12 @@
       - id: 3193 # Blur my Shell
         enable: yes
     gnome_gsettings:
+      # shortcuts 
+      - schema: org.gnome.settings-daemon.plugins.media-keys
+        key: custom-keybindings
+        value: >-
+          "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"
+
       # shortcut: terminal
       - schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/
         key: name
@@ -29,6 +35,16 @@
         key: binding
         value: <Super>t
   
+      # shortcut: rofi
+      - schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/
+        key: name
+        value: '"Launch Rofi"'
+      - schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/
+        key: command
+        value: '"rofi -show drun"'
+      - schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/
+        key: binding
+        value: <Control>Space
       # set default terminal
       - schema: org.gnome.desktop.default-applications.terminal 
         key: exec
