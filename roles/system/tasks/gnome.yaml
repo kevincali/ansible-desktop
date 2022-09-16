@@ -17,13 +17,19 @@
     name: petermosmans.customize-gnome
   vars:
     gnome_user: cake
+
     gnome_extensions:
+      - id: 906 # Sound Input & Output Device Chooser
+        enable: yes 
+      - id: 1160 # Dash to Panel
+        enable: yes 
+      - id: 3193 # Blur my Shell
+        enable: yes
       - id: 3843 # Just Perfection
         enable: yes
       - id: 5090 # Space Bar
         enable: yes
-      - id: 3193 # Blur my Shell
-        enable: yes
+
     gnome_gsettings:
       # shortcuts 
       - schema: org.gnome.settings-daemon.plugins.media-keys
@@ -52,6 +58,7 @@
       - schema: org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/
         key: binding
         value: <Control>Space
+
       # set default terminal
       - schema: org.gnome.desktop.default-applications.terminal 
         key: exec
