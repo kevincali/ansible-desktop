@@ -1,12 +1,12 @@
-- import_tasks: outliers.yaml
-  tags: 
-    - apps
-    - outliers
 - import_tasks: packages.yaml
-  tags: 
-    - apps
-    - packages
+  tags: [apps, packages]
+
+- import_tasks: outliers.yaml
+  tags: [apps, outliers]
+
+- import_tasks: asdf.yaml
+  tags: [apps, asdf]
+    
 - import_tasks: dual-function-keys.yaml
-  tags: 
-    - apps
-    - dual-function-keys
+  tags: [apps, dual-function-keys]
+

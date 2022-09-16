@@ -1,0 +1,33 @@
+- name: Repo cloning
+  become_user: cake
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    clone: yes
+    update: yes
+    single_branch: yes
+    version: v0.10.2
+
+- name: Autocompletion symlinking
+  become_user: cake
+  file:
+    src: ~/.asdf/completions/asdf.fish 
+    dest: ~/.config/fish/completions/asdf.fish
+    state: link
+
+- name: Java plugin installation
+  become_user: cake
+  command: ~/.asdf/bin/asdf plugin-add java https://github.com/halcyon/asdf-java.git 
+  register: result
+  failed_when: result.rc != 0 and result.rc != 2 not in result.stdout
+  changed_when: False
+
+- name: Java SDK installation
+  become_user: cake
+  command: ~/.asdf/bin/asdf install java temurin-18.0.2+9
+  changed_when: False
+
+- name: Java SDK global configuration
+  become_user: cake
+  command: ~/.asdf/bin/asdf global java temurin-18.0.2+9
+  changed_when: False
