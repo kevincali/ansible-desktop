@@ -86,6 +86,11 @@
         key: num-workspaces
         value: 9
 
+      # focus window on mouse entering
+      - schema: org.gnome.desktop.wm.preferences 
+        key: focus-mode 
+        value: '"sloppy"'
+
     gnome_dconf:
       # super + number
       - key: /org/gnome/shell/extensions/space-bar/shortcuts/enable-activate-workspace-shortcuts
