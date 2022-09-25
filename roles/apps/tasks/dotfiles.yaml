@@ -1,0 +1,8 @@
+- name: Run stow bootstrap script
+  vars:
+    home: "{{ lookup('env', 'HOME') }}"
+  shell: 
+    cmd: sh bootstrap.sh
+    chdir: "{{ home }}/git/dotfiles"
+  register: result
+  changed_when: result.stderr != ""

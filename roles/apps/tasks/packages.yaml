@@ -33,6 +33,7 @@
       - qalculate-qt
       - ripgrep
       - rofi
+      - stow
       - syncthing
       - synergy
       - tealdeer
