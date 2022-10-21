@@ -1,0 +1,58 @@
+- name: Install VBAN dependencies
+  package: 
+    name:
+      - cmake 
+      - automake
+      - pulseaudio-libs-devel
+      - alsa-lib-devel
+
+- name: VBAN cloning
+  become_user: cake
+  git:
+    repo: https://github.com/quiniouben/vban
+    dest: /opt/vban/
+    clone: yes
+    update: yes
+    force: yes
+
+- name: VBAN installation Part 1
+  become_user: cake
+  args:
+    chdir: /opt/vban/
+  shell: |
+    autoconf
+    ./autogen.sh
+    ./configure --disable-jack --enable-alsa --enable-pulseaudio
+    make
+
+- name: VBAN installation Part 2
+  make:
+    chdir: /opt/vban/
+    target: install
+  changed_when: False
+
+
+- name: Scream cloning
+  become_user: cake
+  git:
+    repo: https://github.com/duncanthrax/scream
+    dest: /opt/scream/
+    clone: yes
+    update: yes
+    force: yes
+
+- name: Scream installation Part 1
+  become_user: cake
+  args:
+    chdir: /opt/scream/Receivers/unix/
+  shell: |
+    mkdir -p build && cd build
+    cmake ..
+    make
+
+- name: Copy binary to $PATH
+  become_user: cake
+  copy:
+    src: /opt/scream/Receivers/unix/build/scream
+    dest: $HOME/.local/bin/
+    mode: u+x
