@@ -27,3 +27,10 @@
     command: fc-cache -f
     changed_when: False
 
+- name: Cron Job for startup script
+  become_user: cake
+  cron:
+    name: Run startup script on boot
+    special_time: reboot
+    job: $HOME/.local/bin/startup
+    
