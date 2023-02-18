@@ -22,7 +22,6 @@
       - go
       - google-chrome-stable
       - jetbrains-mono-fonts-all
-      - keybase
       - neovim
       - nodejs-typescript
       - prusa-slicer

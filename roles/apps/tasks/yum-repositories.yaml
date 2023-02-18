@@ -6,11 +6,3 @@
   with_items:
     - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
     - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
-
-- name: Add Keybase repository
-  yum_repository:
-    name: keybase
-    description: Keybase.io
-    baseurl: http://prerelease.keybase.io/rpm/x86_64
-    gpgcheck: yes
-    gpgkey: https://keybase.io/docs/server_security/code_signing_key.asc

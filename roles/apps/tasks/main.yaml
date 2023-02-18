@@ -31,3 +31,7 @@
 - import_tasks: balenaetcher.yaml
   tags: [apps, balenaetcher]
 
+- import_tasks: keybase.yaml
+  tags: [apps, keybase]
+
+
