@@ -5,6 +5,7 @@
     dest: ~/.asdf
     clone: yes
     update: yes
+    force: yes
     single_branch: yes
     version: v0.10.2
 

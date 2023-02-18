@@ -5,6 +5,7 @@
     dest: /opt/lazygit/
     clone: yes
     update: yes
+    force: yes
 
 - name: Lazygit installation
   become_user: cake

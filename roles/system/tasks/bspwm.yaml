@@ -18,6 +18,7 @@
       dest: /opt/bspwm/
       clone: yes
       update: yes
+      force: yes
   - name: Build bspwm
     become_user: cake
     make:
@@ -37,6 +38,7 @@
       dest: /opt/sxhkd/
       clone: yes
       update: yes
+      force: yes
   - name: Build sxhkd
     become_user: cake
     make:
