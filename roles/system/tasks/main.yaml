@@ -6,3 +6,6 @@
   tags:
     - system
     - gnome
+
+- import_tasks: xfce.yaml
+  tags: [system, xfce]
