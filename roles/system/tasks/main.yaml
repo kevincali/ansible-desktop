@@ -1,8 +1,8 @@
+- import_tasks: bspwm.yaml
+  tags: [system, bspwm]
+
 - import_tasks: linux.yaml
   tags: [system, linux]
 
 - import_tasks: xfce.yaml
   tags: [system, xfce]
-
-- import_tasks: bspwm.yaml
-  tags: [system, bspwm]
