@@ -29,3 +29,21 @@
       curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
       fisher install PatrickF1/fzf.fish
   changed_when: False
+
+- block:
+  - name: SafeEyes dependencies 
+    package:
+      name:
+        - libappindicator-gtk3 
+        - python3-psutil
+        - cairo-devel
+        - python3-devel
+        - gobject-introspection-devel
+        - cairo-gobject-devel
+  - name: SafeEyes installation
+    pip:
+      name: safeeyes
+  - name: SafeEyes update icon cache
+    shell: 
+      cmd: sudo gtk-update-icon-cache /usr/share/icons/hicolor
+    changed_when: False
