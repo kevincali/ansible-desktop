@@ -1,6 +1,3 @@
-- import_tasks: yum-repositories.yaml
-  tags: [apps, yum-repositories]
-
 - import_tasks: packages.yaml
   tags: [apps, packages]
 
