@@ -1,7 +1,5 @@
 - import_tasks: linux.yaml
-  tags: 
-    - system
-    - linux
+  tags: [system, linux]
 
 - import_tasks: xfce.yaml
   tags: [system, xfce]
