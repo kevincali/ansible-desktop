@@ -5,15 +5,6 @@
     enabled: yes
     scope: user
 
-- name: Setup fish shell  
-  become_user: cake
-  shell: 
-    executable: /usr/bin/fish
-    cmd: |
-      curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-      fisher install PatrickF1/fzf.fish
-  changed_when: False
-
 - block:
   - name: SafeEyes dependencies 
     package:

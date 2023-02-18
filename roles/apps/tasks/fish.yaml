@@ -1,0 +1,15 @@
+- name: Install 
+  package:
+    name:
+      - fish
+
+- name: Configure
+  become_user: cake
+  shell: 
+    executable: /usr/bin/fish
+    cmd: |
+      curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+      fisher install PatrickF1/fzf.fish
+  register: result
+  changed_when: result.stderr != ""
+
