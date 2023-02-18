@@ -16,7 +16,6 @@
       - ansible
       - balena-etcher-electron
       - bat
-      - code
       - dconf-editor
       - fd-find
       - fish
