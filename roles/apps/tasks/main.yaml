@@ -24,3 +24,6 @@
 
 - import_tasks: fish.yaml
   tags: [apps, fish]
+
+- import_tasks: safeeyes.yaml
+  tags: [apps, safeeyes]

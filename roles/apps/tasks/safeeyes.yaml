@@ -1,0 +1,19 @@
+- name: Install dependencies 
+  package:
+    name:
+      - libappindicator-gtk3 
+      - python3-psutil
+      - cairo-devel
+      - python3-devel
+      - gobject-introspection-devel
+      - cairo-gobject-devel
+
+- name: Install
+  pip:
+    name: safeeyes
+
+- name: Update icon cache
+  shell: 
+    cmd: sudo gtk-update-icon-cache /usr/share/icons/hicolor
+  register: result
+  changed_when: result.stderr != ""
