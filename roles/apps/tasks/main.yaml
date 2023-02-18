@@ -9,9 +9,6 @@
 
 - import_tasks: asdf.yaml
   tags: [apps, asdf]
-    
-- import_tasks: dual-function-keys.yaml
-  tags: [apps, dual-function-keys]
 
 - import_tasks: dotfiles.yaml
   tags: [apps, dotfiles]
