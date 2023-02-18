@@ -2,10 +2,6 @@
   tags: 
     - system
     - linux
-- import_tasks: gnome.yaml
-  tags:
-    - system
-    - gnome
 
 - import_tasks: xfce.yaml
   tags: [system, xfce]
