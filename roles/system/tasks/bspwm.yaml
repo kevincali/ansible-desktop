@@ -1,0 +1,49 @@
+- name: Install dependencies
+  package:
+    name:
+      - libxcb
+      - xcb-util 
+      - xcb-util-wm 
+      - xcb-util-keysyms 
+      - libxcb-devel 
+      - xcb-util-wm-devel 
+      - xcb-util-keysyms-devel 
+      - xcb-util-devel
+
+- block:
+  - name: Clone bspwm
+    become_user: cake
+    git:
+      repo: https://github.com/baskerville/bspwm.git
+      dest: /opt/bspwm/
+      clone: yes
+      update: yes
+  - name: Build bspwm
+    become_user: cake
+    make:
+      chdir: /opt/bspwm/
+  - name: Install bspwm
+    make:
+      chdir: /opt/bspwm/
+      target: install
+    register: result
+    changed_when: result.stderr != ""
+
+- block:
+  - name: Clone sxhkd
+    become_user: cake
+    git:
+      repo: https://github.com/baskerville/sxhkd.git
+      dest: /opt/sxhkd/
+      clone: yes
+      update: yes
+  - name: Build sxhkd
+    become_user: cake
+    make:
+      chdir: /opt/sxhkd/
+  - name: Install sxhkd
+    make:
+      chdir: /opt/sxhkd/
+      target: install
+    register: result
+    changed_when: result.stderr != ""
