@@ -14,7 +14,6 @@
       - ShellCheck
       - alacritty
       - ansible
-      - balena-etcher-electron
       - bat
       - dconf-editor
       - fd-find

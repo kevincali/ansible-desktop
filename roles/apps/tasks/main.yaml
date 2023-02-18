@@ -27,3 +27,7 @@
 
 - import_tasks: safeeyes.yaml
   tags: [apps, safeeyes]
+
+- import_tasks: balenaetcher.yaml
+  tags: [apps, balenaetcher]
+
