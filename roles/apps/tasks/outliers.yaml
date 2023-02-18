@@ -1,21 +1,4 @@
 - block:
-  - name: Pop Shell cloning
-    become_user: cake
-    git:
-      repo: https://github.com/pop-os/shell.git
-      dest: /opt/pop-shell/
-      clone: yes
-      update: yes
-  - name: Pop Shell installation
-    become_user: cake
-    make:
-      chdir: /opt/pop-shell/
-      target: "{{ item }}"
-    with_items: [depcheck, compile, install, configure, enable] # removed restart-shell - might need to log out
-    changed_when: False
-
-
-- block:
   - name: Lazygit cloning
     become_user: cake
     git:
