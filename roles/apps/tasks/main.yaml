@@ -4,8 +4,8 @@
 - import_tasks: packages.yaml
   tags: [apps, packages]
 
-- import_tasks: outliers.yaml
-  tags: [apps, outliers]
+- import_tasks: syncthing.yaml
+  tags: [apps, syncthing]
 
 - import_tasks: asdf.yaml
   tags: [apps, asdf]

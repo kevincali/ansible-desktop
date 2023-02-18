@@ -1,4 +1,9 @@
-- name: Enable Syncthing
+- name: Install 
+  package:
+    name:
+      - syncthing
+
+- name: Enable service
   become_user: cake
   systemd:
     name: syncthing
