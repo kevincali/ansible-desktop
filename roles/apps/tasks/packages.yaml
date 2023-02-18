@@ -41,14 +41,5 @@
       - wireguard-tools
       - wmctrl
       - xdotool
-
-- name: Install dependencies
-  package:
-    name:
-      - gcc-c++ # LunarVim
-      - tree-sitter-cli # LunarVim
-      - nodejs-typescript # Pop Shell
-      - python3-psutil # Ansible dconf module
       - util-linux-user # chsh command
-      - xprop # Pop Shell
 
