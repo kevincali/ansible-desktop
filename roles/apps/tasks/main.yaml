@@ -15,3 +15,6 @@
 
 - import_tasks: lvim.yaml
   tags: [apps, lvim]
+
+- import_tasks: lazygit.yaml
+  tags: [apps, lazygit]

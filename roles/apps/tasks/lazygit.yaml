@@ -1,0 +1,17 @@
+- name: Lazygit cloning
+  become_user: cake
+  git:
+    repo: https://github.com/jesseduffield/lazygit.git
+    dest: /opt/lazygit/
+    clone: yes
+    update: yes
+
+- name: Lazygit installation
+  become_user: cake
+  command: go install
+  args:
+    chdir: /opt/lazygit
+  register: result
+  changed_when: result.stdout != ""
+
+
