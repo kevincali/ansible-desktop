@@ -1,6 +1,7 @@
 - name: Configure /opt/
   file:
     path: /opt
+    recurse: true
     owner: root
     group: cake
     mode: 0775
@@ -33,4 +34,3 @@
     name: Run startup script on boot
     special_time: reboot
     job: $HOME/.local/bin/startup
-    
