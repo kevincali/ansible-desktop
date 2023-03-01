@@ -12,6 +12,7 @@
     name:
       - bitwarden
       - com.discord
+      - libreoffice
       - mailspring
       - md.obsidian
       - spotify
@@ -24,8 +25,10 @@
       - alacritty
       - ansible
       - bat
+      - brightnessctl
       - dconf-editor
       - fd-find
+      - firefox
       - fzf
       - gnome-extensions-app
       - go
@@ -42,8 +45,8 @@
       - synergy
       - tealdeer
       - telegram-desktop
+      - util-linux-user # chsh command
       - wireguard-tools
       - wmctrl
       - xdotool
-      - util-linux-user # chsh command
 

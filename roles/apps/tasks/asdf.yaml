@@ -17,7 +17,7 @@
     state: link
 
 - block:
-  - name: Java plugin installation
+  - name: Java plugin adding
     become_user: cake
     command: ~/.asdf/bin/asdf plugin-add java https://github.com/halcyon/asdf-java.git 
     register: result
@@ -32,4 +32,22 @@
   - name: Java SDK global configuration
     become_user: cake
     command: ~/.asdf/bin/asdf global java temurin-18.0.2+9
+    changed_when: False
+
+- block:
+  - name: Chezmoi plugin adding
+    become_user: cake
+    command: ~/.asdf/bin/asdf plugin-add chezmoi
+    register: result
+    failed_when: result.rc != 0 and result.rc != 2 not in result.stdout
+    changed_when: False
+
+  - name: Chezmoi installation
+    become_user: cake
+    command: ~/.asdf/bin/asdf install chezmoi 2.31.1
+    changed_when: False
+
+  - name: Chezmoi global configuration
+    become_user: cake
+    command: ~/.asdf/bin/asdf global chezmoi 2.31.1
     changed_when: False
