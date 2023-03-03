@@ -50,3 +50,9 @@
       - wmctrl
       - xdotool
 
+- name: Remove unneeded default fedora packages
+  package:
+    state: absent
+    name:
+      - dnfdragora
+      - dnfdragora-updater
