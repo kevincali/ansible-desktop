@@ -16,6 +16,7 @@
       - mailspring
       - md.obsidian
       - spotify
+      - stretchly
       - teamspeak
 
 - name: Install fedora packages
@@ -33,6 +34,7 @@
       - gnome-extensions-app
       - go
       - google-chrome-stable
+      - gvfs-smb # thunar smb support
       - jetbrains-mono-fonts-all
       - neovim
       - nodejs-typescript

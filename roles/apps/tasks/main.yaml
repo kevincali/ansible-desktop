@@ -22,9 +22,6 @@
 - import_tasks: packages.yaml
   tags: [apps, packages]
 
-- import_tasks: safeeyes.yaml
-  tags: [apps, safeeyes]
-
 - import_tasks: syncthing.yaml
   tags: [apps, syncthing]
 
