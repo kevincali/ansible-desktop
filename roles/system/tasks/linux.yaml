@@ -6,10 +6,6 @@
     group: cake
     mode: 0775
 
-- name: Remove Fedora filter from Flathub repository
-  shell: flatpak remote-modify --no-filter flathub
-  changed_when: False
-      
 - block:
   - name: Create local font directory for nerd font
     become_user: cake
