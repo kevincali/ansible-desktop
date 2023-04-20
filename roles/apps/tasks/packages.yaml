@@ -26,6 +26,7 @@
       - alacritty
       - ansible
       - bat
+      - bolt
       - brightnessctl
       - dconf-editor
       - fd-find
@@ -50,7 +51,6 @@
       - wireguard-tools
       - wmctrl
       - xdotool
-
 - name: Remove unneeded default fedora packages
   package:
     state: absent
