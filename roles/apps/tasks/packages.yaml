@@ -12,9 +12,11 @@
     name:
       - bitwarden
       - com.discord
+      - filezilla
       - libreoffice
       - mailspring
       - md.obsidian
+      - signal
       - spotify
       - stretchly
       - teamspeak
@@ -31,12 +33,15 @@
       - dconf-editor
       - fd-find
       - firefox
+      - flatseal
       - fzf
       - gnome-extensions-app
       - go
       - google-chrome-stable
+      - gvfs-fuse
       - gvfs-smb # thunar smb support
       - jetbrains-mono-fonts-all
+      - mpv
       - neovim
       - nodejs-typescript
       - prusa-slicer
@@ -47,10 +52,12 @@
       - synergy
       - tealdeer
       - telegram-desktop
+      - unrar
       - util-linux-user # chsh command
       - wireguard-tools
       - wmctrl
       - xdotool
+
 - name: Remove unneeded default fedora packages
   package:
     state: absent
