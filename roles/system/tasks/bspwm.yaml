@@ -1,14 +1,18 @@
 - name: Install dependencies
   package:
     name:
+      - dash
+      - gcc
+      - git
       - libxcb
-      - xcb-util 
-      - xcb-util-wm 
-      - xcb-util-keysyms 
       - libxcb-devel 
-      - xcb-util-wm-devel 
-      - xcb-util-keysyms-devel 
+      - make
+      - xcb-util 
       - xcb-util-devel
+      - xcb-util-keysyms 
+      - xcb-util-keysyms-devel 
+      - xcb-util-wm 
+      - xcb-util-wm-devel 
 
 - block:
   - name: Clone bspwm

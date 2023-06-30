@@ -1,7 +1,6 @@
-- name: Install XFCE
+- name: Install XFCE plugins
   package:
     name:
-      - "@xfce-desktop-environment"
       - xfce4-genmon-plugin
       - xfce4-clipman-plugin
 

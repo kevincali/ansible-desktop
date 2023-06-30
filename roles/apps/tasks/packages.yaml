@@ -7,20 +7,6 @@
     - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
     - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
-- name: Install flatpak packages
-  flatpak:
-    name:
-      - bitwarden
-      - com.discord
-      - filezilla
-      - libreoffice
-      - mailspring
-      - md.obsidian
-      - signal
-      - spotify
-      - stretchly
-      - teamspeak
-
 - name: Install fedora packages
   package:
     name:
@@ -30,16 +16,18 @@
       - bat
       - bolt
       - brightnessctl
+      - chromium
       - dconf-editor
       - fd-find
       - firefox
+      - flatpak
       - flatseal
       - fzf
       - gnome-extensions-app
       - go
-      - google-chrome-stable
       - gvfs-fuse
       - gvfs-smb # thunar smb support
+      - htop
       - jetbrains-mono-fonts-all
       - mpv
       - neovim
@@ -64,3 +52,23 @@
     name:
       - dnfdragora
       - dnfdragora-updater
+
+- name: Add flathub remote for flatpak
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
+- name: Install flatpak packages
+  flatpak:
+    name:
+      - com.bitwarden.desktop
+      - com.discordapp.Discord
+      - org.filezillaproject.Filezilla
+      - org.libreoffice.LibreOffice 
+      - com.getmailspring.Mailspring 
+      - md.obsidian.Obsidian 
+      - org.signal.Signal
+      - com.spotify.Client
+      - net.hovancik.Stretchly
+      - com.teamspeak.TeamSpeak
