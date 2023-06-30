@@ -13,3 +13,6 @@
   register: result
   changed_when: result.stderr != ""
 
+- name: Set default
+  become_user: cake
+  shell: "chsh -s $(which fish)"
