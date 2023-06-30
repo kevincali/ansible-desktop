@@ -27,6 +27,6 @@
 
 - name: Apply dotfiles
   become_user: cake
-  command: chezmoi apply
+  command: ~/.asdf/shims/chezmoi init --apply kevincali
   register: result
   changed_when: result.stderr != ""
