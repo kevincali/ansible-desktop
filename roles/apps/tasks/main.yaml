@@ -1,12 +1,14 @@
-- import_tasks: asdf.yaml
-  tags: [apps, asdf]
-
+- import_tasks: packages.yaml
+  tags: [apps, packages]
 
 - import_tasks: dotfiles.yaml
   tags: [apps, dotfiles]
 
 - import_tasks: fish.yaml
   tags: [apps, fish]
+
+- import_tasks: asdf.yaml
+  tags: [apps, asdf]
 
 - import_tasks: keybase.yaml
   tags: [apps, keybase]
@@ -16,9 +18,6 @@
 
 - import_tasks: lvim.yaml
   tags: [apps, lvim]
-
-- import_tasks: packages.yaml
-  tags: [apps, packages]
 
 - import_tasks: syncthing.yaml
   tags: [apps, syncthing]
