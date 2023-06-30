@@ -1,8 +1,6 @@
 - import_tasks: asdf.yaml
   tags: [apps, asdf]
 
-- import_tasks: balenaetcher.yaml
-  tags: [apps, balenaetcher]
 
 - import_tasks: dotfiles.yaml
   tags: [apps, dotfiles]
