@@ -17,7 +17,7 @@
     become_user: cake
     unarchive:
       remote_src: yes
-      src: https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+      src: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
       dest: "{{ lookup('env', 'HOME') }}/.local/share/fonts/JetBrainsMono"
       creates: "{{ lookup('env', 'HOME') }}/.local/share/fonts/JetBrainsMono/JetBrains Mono Regular Nerd Font Complete.ttf"
   - name: Update font cache
