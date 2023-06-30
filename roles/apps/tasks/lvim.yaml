@@ -14,6 +14,7 @@
   command: which lvim
   register: lvim_installed
   changed_when: lvim_installed.stderr != ""
+  ignore_errors: true
 
 - name: Not Installed -> Installation
   become_user: cake
