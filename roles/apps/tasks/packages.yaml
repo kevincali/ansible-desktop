@@ -7,6 +7,10 @@
     - "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_distribution_major_version }}.noarch.rpm"
     - "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_distribution_major_version }}.noarch.rpm"
 
+- name: Add Docker repository
+  shell: "dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo"
+  changed_when: False
+
 - name: Install fedora packages
   package:
     name:
@@ -17,7 +21,13 @@
       - bolt
       - brightnessctl
       - chromium
+      - containerd.io # docker 
       - dconf-editor
+      - docker-buildx-plugin 
+      - docker-ce
+      - docker-ce-cli
+      - docker-compose
+      - docker-compose-plugin
       - fd-find
       - firefox
       - flatpak
