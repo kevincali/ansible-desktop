@@ -1,0 +1,13 @@
+- name: Install flatpak packages
+  flatpak:
+    name:
+      - com.slack.Slack
+
+- name: Install brew packages
+  become_user: cake
+  homebrew:
+    name:
+      - Azure/kubelogin/kubelogin
+      - kubernetes-cli
+      - marp-cli
+      - metalbear-co/mirrord/mirrord

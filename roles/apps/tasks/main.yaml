@@ -18,3 +18,7 @@
 
 - import_tasks: vscode.yaml
   tags: [apps, vscode]
+
+- import_tasks: work.yaml
+  tags: [apps, work]
+  when: ansible_hostname == "work"
