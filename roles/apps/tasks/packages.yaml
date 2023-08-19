@@ -72,3 +72,15 @@
       - com.spotify.Client
       - net.hovancik.Stretchly
       - com.teamspeak.TeamSpeak
+
+- name: Check if brew is already installed
+  become_user: cake
+  command: which brew
+  register: brew_installed
+  changed_when: brew_installed.stderr != ""
+  ignore_errors: true
+
+- name: Install brew
+  become_user: cake
+  shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  when: brew_installed is failed
