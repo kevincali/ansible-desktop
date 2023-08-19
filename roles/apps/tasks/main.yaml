@@ -13,9 +13,6 @@
 - import_tasks: keybase.yaml
   tags: [apps, keybase]
 
-- import_tasks: lazygit.yaml
-  tags: [apps, lazygit]
-
 - import_tasks: lvim.yaml
   tags: [apps, lvim]
 
