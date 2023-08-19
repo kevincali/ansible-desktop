@@ -72,15 +72,15 @@
     name:
       - com.bitwarden.desktop
       - com.discordapp.Discord
-      - org.filezillaproject.Filezilla
-      - org.libreoffice.LibreOffice 
       - com.getmailspring.Mailspring 
-      - md.obsidian.Obsidian 
-      - org.signal.Signal
       - com.google.Chrome
       - com.spotify.Client
-      - net.hovancik.Stretchly
       - com.teamspeak.TeamSpeak
+      - md.obsidian.Obsidian 
+      - net.hovancik.Stretchly
+      - org.filezillaproject.Filezilla
+      - org.libreoffice.LibreOffice 
+      - org.signal.Signal
 
 - name: Check if brew is already installed
   become_user: cake
