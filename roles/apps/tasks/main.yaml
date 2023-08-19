@@ -7,9 +7,6 @@
 - import_tasks: fish.yaml
   tags: [apps, fish]
 
-- import_tasks: asdf.yaml
-  tags: [apps, asdf]
-
 - import_tasks: keybase.yaml
   tags: [apps, keybase]
 
