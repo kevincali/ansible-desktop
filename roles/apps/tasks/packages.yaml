@@ -28,10 +28,10 @@
       - docker-compose
       - docker-compose-plugin
       - fd-find
+      - feh
       - flatpak
       - flatseal
       - fzf
-      - gnome-extensions-app
       - gvfs-fuse
       - gvfs-smb # thunar smb support
       - htop
@@ -92,9 +92,16 @@
   become_user: cake
   shell: NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   when: brew_installed is failed
+
 - name: Install brew packages
   become_user: cake
   homebrew:
     name:
+      - chezmoi
       - golang
+      - helix
+      - lazydocker
       - lazygit
+      - marksman # lsp markdown
+      - yaml-language-server
+      - zellij
