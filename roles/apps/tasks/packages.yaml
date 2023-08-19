@@ -32,7 +32,6 @@
       - flatseal
       - fzf
       - gnome-extensions-app
-      - go
       - gvfs-fuse
       - gvfs-smb # thunar smb support
       - htop
@@ -97,4 +96,5 @@
   become_user: cake
   homebrew:
     name:
+      - golang
       - lazygit
