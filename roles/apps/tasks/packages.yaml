@@ -14,7 +14,6 @@
 - name: Install fedora packages
   package:
     name:
-      - ShellCheck
       - alacritty
       - ansible
       - bat
@@ -29,6 +28,7 @@
       - docker-compose-plugin
       - fd-find
       - feh
+      - ffmpeg
       - flatpak
       - flatseal
       - fzf
@@ -36,14 +36,17 @@
       - gvfs-smb # thunar smb support
       - htop
       - jetbrains-mono-fonts-all
+      - libva-utils
       - mpv
       - neovim
+      - nodejs-bash-language-server
       - nodejs-typescript
       - prusa-slicer
       - qalculate
       - qalculate-qt
       - ripgrep
       - rofi
+      - ShellCheck
       - synergy
       - tealdeer
       - telegram-desktop
@@ -51,6 +54,7 @@
       - util-linux-user # chsh command
       - wireguard-tools
       - wmctrl
+      - x265
       - xdotool
 
 - name: Remove unneeded default fedora packages

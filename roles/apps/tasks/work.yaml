@@ -1,6 +1,7 @@
 - name: Install flatpak packages
   flatpak:
     name:
+      - com.mongodb.Compass
       - com.slack.Slack
 
 - name: Install brew packages
@@ -9,5 +10,6 @@
     name:
       - Azure/kubelogin/kubelogin
       - kubernetes-cli
+      - kubeseal
       - marp-cli
       - metalbear-co/mirrord/mirrord
