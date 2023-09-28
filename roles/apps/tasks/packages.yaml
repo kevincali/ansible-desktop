@@ -50,6 +50,7 @@
       - synergy
       - tealdeer
       - telegram-desktop
+      - tig
       - unrar
       - util-linux-user # chsh command
       - wireguard-tools
@@ -107,5 +108,8 @@
       - lazydocker
       - lazygit
       - marksman # lsp markdown
+      - ueberzugpp
       - yaml-language-server
+      - yazi
       - zellij
+      - zoxide

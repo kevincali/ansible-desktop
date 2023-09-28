@@ -3,6 +3,7 @@
     name:
       - com.mongodb.Compass
       - com.slack.Slack
+      - rest.insomnia.Insomnia
 
 - name: Install brew packages
   become_user: cake
