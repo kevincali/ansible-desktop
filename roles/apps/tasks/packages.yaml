@@ -41,7 +41,6 @@
       - neovim
       - nodejs-bash-language-server
       - nodejs-typescript
-      - prusa-slicer
       - qalculate
       - qalculate-qt
       - ripgrep
@@ -78,6 +77,7 @@
       - com.discordapp.Discord
       - com.getmailspring.Mailspring 
       - com.google.Chrome
+      - com.prusa3d.PrusaSlicer
       - com.spotify.Client
       - com.teamspeak.TeamSpeak
       - md.obsidian.Obsidian 
