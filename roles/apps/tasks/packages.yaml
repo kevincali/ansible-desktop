@@ -14,7 +14,6 @@
 - name: Install fedora packages
   package:
     name:
-      - alacritty
       - ansible
       - bat
       - bolt
@@ -35,8 +34,10 @@
       - gvfs-fuse
       - gvfs-smb # thunar smb support
       - htop
+      - inotify-tools
       - jetbrains-mono-fonts-all
       - libva-utils
+      - meld
       - mpv
       - neovim
       - nodejs-bash-language-server
@@ -75,12 +76,15 @@
     name:
       - com.bitwarden.desktop
       - com.discordapp.Discord
-      - com.getmailspring.Mailspring 
+      - com.github.xournalpp.xournalpp
       - com.google.Chrome
       - com.prusa3d.PrusaSlicer
       - com.spotify.Client
       - com.teamspeak.TeamSpeak
+      - com.valvesoftware.Steam
+      - io.dbeaver.DBeaverCommunity
       - md.obsidian.Obsidian 
+      - net.blix.BlueMail
       - net.hovancik.Stretchly
       - org.filezillaproject.Filezilla
       - org.libreoffice.LibreOffice 
@@ -109,6 +113,7 @@
       - lazygit
       - marksman # lsp markdown
       - ueberzugpp
+      - wez/wezterm-linuxbrew/wezterm
       - yaml-language-server
       - yazi
       - zellij

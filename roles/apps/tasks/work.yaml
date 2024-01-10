@@ -9,8 +9,13 @@
   become_user: cake
   homebrew:
     name:
-      - Azure/kubelogin/kubelogin
+      - azure/kubelogin/kubelogin
+      - conftest
+      - hashicorp/tap/vault
+      - kubeconform
       - kubernetes-cli
       - kubeseal
       - marp-cli
       - metalbear-co/mirrord/mirrord
+      - prometheus
+      - yq
