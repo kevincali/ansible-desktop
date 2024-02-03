@@ -19,3 +19,16 @@
       - metalbear-co/mirrord/mirrord
       - prometheus
       - yq
+
+- name: Add yum repository
+  yum_repository:
+    name: 1password
+    description: 1Password
+    baseurl: https://downloads.1password.com/linux/rpm/stable/$basearch
+    gpgcheck: yes
+    gpgkey: https://downloads.1password.com/linux/keys/1password.asc
+
+- name: Install fedora packages
+  package:
+    name:
+      - 1password

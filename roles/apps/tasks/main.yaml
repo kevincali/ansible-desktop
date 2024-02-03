@@ -10,9 +10,6 @@
 - import_tasks: keybase.yaml
   tags: [apps, keybase]
 
-- import_tasks: lvim.yaml
-  tags: [apps, lvim]
-
 - import_tasks: syncthing.yaml
   tags: [apps, syncthing]
 

@@ -80,7 +80,7 @@
       - com.google.Chrome
       - com.prusa3d.PrusaSlicer
       - com.spotify.Client
-      - com.teamspeak.TeamSpeak
+      - com.teamspeak.TeamSpeak3
       - com.valvesoftware.Steam
       - io.dbeaver.DBeaverCommunity
       - md.obsidian.Obsidian 
