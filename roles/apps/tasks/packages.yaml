@@ -14,10 +14,12 @@
 - name: Install fedora packages
   package:
     name:
+      - 1password-cli
       - ansible
       - bat
       - bolt
       - brightnessctl
+      - btop
       - containerd.io # docker 
       - dconf-editor
       - docker-buildx-plugin 
@@ -39,7 +41,6 @@
       - libva-utils
       - meld
       - mpv
-      - neovim
       - nodejs-bash-language-server
       - nodejs-typescript
       - qalculate
@@ -108,6 +109,7 @@
     name:
       - chezmoi
       - golang
+      - golangci-lint
       - helix
       - lazydocker
       - lazygit

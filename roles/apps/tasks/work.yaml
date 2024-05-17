@@ -12,12 +12,16 @@
       - azure/kubelogin/kubelogin
       - conftest
       - hashicorp/tap/vault
+      - k9s
       - kubeconform
       - kubernetes-cli
       - kubeseal
+      - kustomize
       - marp-cli
       - metalbear-co/mirrord/mirrord
       - prometheus
+      - terraform
+      - terraform-ls
       - yq
 
 - name: Add yum repository
